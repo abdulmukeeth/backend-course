@@ -10,7 +10,7 @@ const MovieSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    genre: {
+    genre: [{
       type: String,
       enum: [
         "Action",
@@ -25,7 +25,7 @@ const MovieSchema = new mongoose.Schema(
         "Musical",
         "Other",
       ],
-    },
+    }],
     director: {
       type: String,
       required: true,
