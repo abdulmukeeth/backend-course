@@ -23,3 +23,5 @@ async function deleteHotelByPhoneNo(hotelPhoneNo) {
     }
 }
 deleteHotelByPhoneNo("+1234555890"); // Lake View Hotel
+
+lake 
