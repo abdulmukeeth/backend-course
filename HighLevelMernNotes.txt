@@ -1,0 +1,42 @@
+Node Js : Server Side Language 
+MongoDB stores our data , provisioned by Atlas 
+React (CLient) ----Talk via API (using fetch call )-----> Express JS (routing) + powered by Node JS (Server) -----find / findOne-> MongoDB (DB server)
+
+- It’s a JavaScript-based full-stack framework — meaning you can build both frontend and backend entirely using JavaScript.
+
+React is the frontend library.
+It runs in the browser, building dynamic user interfaces.
+When you need to fetch or send data, React makes HTTP requests (fetch / axios) to the backend API.
+
+Node.js provides the runtime environment — it lets JavaScript run outside the browser (on the server).
+
+Express.js is a lightweight web framework built on top of Node.js.
+Express handles:
+- Routing (e.g., /api/users, /api/products/:id)
+- Middleware (for auth, logging, validation, etc.)
+- API responses to the frontend
+
+MongoDB is a NoSQL database that stores data as JSON-like documents.
+MongoDB Atlas is the cloud service that hosts your database.
+The server (Node + Express) uses Mongoose or the MongoDB driver to communicate with the database.
+
+React (Client) 
+    ↓  (fetch / axios)
+Express + Node (Server)
+    ↓  (Mongoose / MongoDB Driver)
+MongoDB Atlas (Database)
+    ↑  (returns data)
+Express + Node (formats response)
+    ↑
+React (renders UI)
+
+React is asking:
+“Hey server, give me all the products to show to the user!"
+So Express + Node are acting like:
+“Got your request, React! Let me go ask the database for the products.”
+MongoDB is saying:
+“Here’s the list of products you asked for!”
+Express says:
+“Here’s the clean product list, React — ready for display!”
+React says:
+“Got it, server! I’ll display these products for the user.”
