@@ -31,7 +31,7 @@ async function createHotel(newHotel){
         throw error;
     }
 };
-createHotel(newHotel1);
+// createHotel(newHotel1);
 // 2. Run the same function to create another hotel data in the database.
 const newHotel2 = {
   name: "Sunset Resort",
@@ -53,7 +53,7 @@ const newHotel2 = {
   isRestaurantAvailable: true,
   photos: ["https://example.com/hotel2-photo1.jpg", "https://example.com/hotel2-photo2.jpg"],
 };
-// createHotel(newHotel2);
+createHotel(newHotel2);
 
 // 3. Create a function to read all hotels from the database. Console all the hotels. Use proper function and variable names.
 async function readAllHotels(){

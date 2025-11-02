@@ -27,7 +27,7 @@ async function createRestaurant(newRestaurant){
         throw error;
     }
 };
-// createRestaurant(newRestaurant1);
+createRestaurant(newRestaurant1);
 
 // 2. Run the same function to create another restaurant data in the database.
 const newRestaurant2 = {
@@ -45,7 +45,7 @@ const newRestaurant2 = {
   menuUrl: "https://yo-example.com/menu",
   photos: ["https://example.com/yo-photo1.jpg", "https://example.com/yo-photo2.jpg", "https://example.com/yo-photo3.jpg"]
 };
-// createRestaurant(newRestaurant2);
+createRestaurant(newRestaurant2);
 
 // 3. Create a function to read all restaurants from the database. Console all the restaurants. Use proper function and variable names.
 async function readAllRestaurants(){
