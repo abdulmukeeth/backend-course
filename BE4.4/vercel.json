@@ -6,6 +6,6 @@
   ],
   "rewrites": [
     { "source": "/recipes", "destination": "assignment2.js" },
-    { "source": "/(.*)", "destination": "assignment1.js" }
+    { "source": "/books", "destination": "assignment1.js" }
   ]
 }
