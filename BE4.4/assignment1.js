@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
-const Book = require("../../BE1.1/models/book.models");
-const { initializeDatabase } = require("../../db/db.connect");
+const Book = require("../BE1.1/models/book.models");
+const { initializeDatabase } = require("../db/db.connect");
 initializeDatabase();
 // 1. Create an API with route "/books" to create a new book data in the books Database. Make sure to do error handling. Test your API with Postman. Add the following book:
 async function createBook(newBook){
