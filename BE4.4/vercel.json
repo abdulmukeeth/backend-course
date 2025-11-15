@@ -2,12 +2,10 @@
   "version": 2,
   "builds": [
     { "src": "assignment2.js", "use": "@vercel/node" },
-    { "src": "assignment3.js", "use": "@vercel/node" },
     { "src": "assignment1.js", "use": "@vercel/node" }
   ],
   "rewrites": [
-    { "source": "/recipes", "destination": "assignment2.js" },
-    { "source": "/recipes1", "destination": "assignment3.js" },
-    { "source": "/books", "destination": "assignment1.js" }
+    { "source": "/recipes(.*)", "destination": "assignment2.js" },
+    { "source": "/books(.*)", "destination": "assignment1.js" }
   ]
 }
