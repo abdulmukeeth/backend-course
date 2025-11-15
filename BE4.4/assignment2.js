@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 // 1. Create a Mongoose model for a Recipe
-const Recipes = require("../../BE1.1/models/recipes.model");
+const Recipes = require("../BE1.1/models/recipes.model");
 // 2. Create your db connection
-const { initializeDatabase } = require("../../db/db.connect");
+const { initializeDatabase } = require("../db/db.connect");
 initializeDatabase();
 // 3. Create an API with route "/recipes" to create a new recipe in the recipes database. Make sure to handle errors properly. Test your API with Postman. Add the following recipe:
 async function createRecipe(newRecipe){
@@ -192,5 +192,7 @@ app.delete("/recipes/:id", async (req, res) => {
     }
 })
 
-
-module.exports = app;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log("Server is Running on PORT xxxx");
+})
