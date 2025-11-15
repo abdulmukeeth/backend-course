@@ -1,12 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "assignment1.js", "use": "@vercel/node" },
-    { "src": "assignment2.js", "use": "@vercel/node" }
+    { "src": "BE4.4/assignment1.js", "use": "@vercel/node" },
+    { "src": "BE4.4/assignment2.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/assignment1", "dest": "assignment1.js" },
-    { "src": "/assignment2", "dest": "assignment2.js" }
+    { "src": "/assignment1", "dest": "BE4.4/assignment1.js" },
+    { "src": "/assignment2", "dest": "BE4.4/assignment2.js" }
   ]
 }
-
