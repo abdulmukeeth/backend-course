@@ -4,6 +4,13 @@ const app = express();
 app.use(express.json());
 const Hotel = require("../BE2.1/models/hotel.models");
 initializeDatabase();
+const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 // 1. Create an API with route "/hotels" to read all hotels from the Database. Test your API with Postman.
 async function readAllHotels(){
     try{
