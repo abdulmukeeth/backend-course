@@ -35,6 +35,44 @@ app.get("/hotels", async (req, res) => {
         res.status(500).json({error: "Failed to Fetch Hotel Data"})
     }
 })
+async function readHotelByName(hotelName){
+    try{
+        const hotel = await Hotel.findOne({name: hotelName});
+        return(hotel);
+    } catch(error){
+        throw(error);
+    }
+}
+app.get("/hotels/:hotelName", async(req, res) => {
+    try{    
+        const hotel = await readHotelByName(req.params.hotelName);
+        if(hotel.length != 0){
+            res.send(hotel);
+        } else {
+            res.status(404).json({error: "Hotel Not Found."});
+        }
+    } catch(error){
+        res.status(500).json({error: "Failed to Fetch Hotel Data"})
+    }
+})
+async function createHotel(newHotel){
+    try{
+        const hotel = new Hotel(newHotel);
+        const saveHotel = await hotel.save();
+        return(saveHotel);
+    } catch (error){
+        throw error;
+    }
+};
+app.post("/hotels", async(req, res) => {
+    try{
+        const hotelToAdd = await createHotel(req.body);
+        res.status(201).json({message: "Hotel Added Successfully.", hotelAdded: hotelToAdd});
+    } catch(error){
+        res.status(500).json({error: error.message})
+        // res.status(500).json({error: "Failed to Add Hotel."})
+    }
+})
 async function deleteHotel(hotelId){
     try{
         const deletedHotel = await Hotel.findByIdAndDelete(hotelId);
